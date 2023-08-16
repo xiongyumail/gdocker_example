@@ -1,6 +1,6 @@
 #!/bin/bash
-IMAGE_NAME=$(basename $(pwd))
-IMAGE_VERSION=$(git rev-parse --abbrev-ref HEAD | sed 's/\//_/g')
+IMAGE_NAME=$(basename $(pwd) | sed 's/[[:upper:]]/\L&/g')
+IMAGE_VERSION=$(git rev-parse --abbrev-ref HEAD | sed 's/[[:upper:]]/\L&/g; s/[^[:alnum:]]/./g')
 
 WORK_PATH=$(cd $(dirname $0); pwd)
 

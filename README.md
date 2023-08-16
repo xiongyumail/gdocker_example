@@ -27,6 +27,12 @@ or
 ./run.sh [projects_path]
 ```
 
+## Reinstall
+
+```
+./run.sh reinstall
+```
+
 ## Clean
 
 ```
