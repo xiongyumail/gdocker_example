@@ -1,7 +1,4 @@
 #!/bin/bash
-WORK_PATH=$(cd $(dirname $0); pwd)
-echo "WORK_PATH: ${WORK_PATH}"
-
 export PROJECTS_PATH=/home/${MY_NAME}/projects
 
 session=${MY_NAME}

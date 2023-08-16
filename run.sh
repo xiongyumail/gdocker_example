@@ -1,6 +1,6 @@
 #!/bin/bash
-IMAGE_NAME="gdocker_example"
-IMAGE_VERSION="1.0.0"
+IMAGE_NAME=$(basename $(pwd))
+IMAGE_VERSION=$(git rev-parse --abbrev-ref HEAD | sed 's/\//_/g')
 
 WORK_PATH=$(cd $(dirname $0); pwd)
 
@@ -23,4 +23,4 @@ else
   PROJECT=$1
 fi
 
-${WORK_PATH}/tools/gdocker/gdocker.sh start -n ${IMAGE_NAME} -v ${IMAGE_VERSION} -c "/bin/bash /home/${IMAGE_NAME}/workspace/sessions.sh" -p $PROJECT
+${WORK_PATH}/tools/gdocker/gdocker.sh start -n ${IMAGE_NAME} -v ${IMAGE_VERSION} -c "/bin/bash /home/${IMAGE_NAME}/workspace/projects/sessions.sh" -p $PROJECT
